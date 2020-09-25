@@ -39,13 +39,22 @@ export class CreateDataComponent {
         .set(
           'Content-Type',
           'application/x-www-form-urlencoded'
-        );
-      let name = "ghjkkn";
+      );
+      let possible = "abcdefghijklmnoprstuvwy";
+      const lengthOfCode = 10;
+      let name = this.makeRandom(lengthOfCode, possible);
       let body = `Name=${name}`;
       this.http.post<any>(this.baseUrl + 'api/things', body, { headers: this.header }).subscribe(result => {
         this.somethings = result;
       }, error2 => console.error(error2));
     }, error1 => console.error(error1));
+  }
+  makeRandom(lengthOfCode: number, possible: string) {
+    let text = "";
+    for (let i = 0; i < lengthOfCode; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
   }
 }
 
