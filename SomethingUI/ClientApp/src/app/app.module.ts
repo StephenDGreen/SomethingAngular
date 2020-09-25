@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { HomeComponent } from './home/home.component';
-import { CounterComponent } from './counter/counter.component';
 import { CreateDataComponent } from './create-data/create-data.component';
 
 @NgModule({
@@ -15,7 +14,6 @@ import { CreateDataComponent } from './create-data/create-data.component';
     AppComponent,
     NavMenuComponent,
     HomeComponent,
-    CounterComponent,
     CreateDataComponent
   ],
   imports: [
@@ -24,7 +22,6 @@ import { CreateDataComponent } from './create-data/create-data.component';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
-      { path: 'counter', component: CounterComponent },
       { path: 'create-data', component: CreateDataComponent },
     ])
   ],
